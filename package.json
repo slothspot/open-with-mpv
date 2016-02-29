@@ -1,0 +1,15 @@
+{
+  "title": "Open with mpv",
+  "name": "open-with-mpv",
+  "version": "0.0.1",
+  "description": "Addon to open videos with mpv",
+  "main": "index.js",
+  "author": "Dmitry Melnichenko",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+  ]
+}
