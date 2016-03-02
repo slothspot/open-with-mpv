@@ -11,5 +11,8 @@
   },
   "license": "MIT",
   "keywords": [
-  ]
+  ],
+  "permissions": {
+    "private-browsing": true
+  }
 }
