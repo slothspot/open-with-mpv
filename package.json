@@ -14,5 +14,12 @@
   ],
   "permissions": {
     "private-browsing": true
-  }
+  },
+  "preferences": [{
+    "name": "mpvPath",
+    "title": "Path to Mpv",
+    "description": "Path to mpv executable to use for video playback",
+    "type": "file",
+    "value": "/usr/local/bin/mpv"
+  }]
 }
