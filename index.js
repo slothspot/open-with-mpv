@@ -1,7 +1,9 @@
+var self = require('sdk/self');
 var child_process = require('sdk/system/child_process');
 var buttons = require('sdk/ui/button/action');
 var tabs = require('sdk/tabs');
 var settings = require('sdk/simple-prefs');
+var contextMenu = require('sdk/context-menu');
 
 var button = buttons.ActionButton({
   id: 'mpv-link',
@@ -19,3 +21,18 @@ function handleClick(state){
   var mpvExec = settings.prefs.mpvPath;
   child_process.spawn(mpvExec, [tabs.activeTab.url]);
 }
+
+function handleContextMenu(link) {
+  console.log(link);
+  var mpvExec = settings.prefs.mpvPath;
+  child_process.spawn(mpvExec, [link]);
+}
+
+var menuItem = contextMenu.Item({
+  label: 'Open link with mpv',
+  image: self.data.url('mpv-16.png'),
+  context: contextMenu.SelectorContext('a[href]'),
+  data: settings.prefs.mpvPath,
+  contentScript: 'self.on("click", function(node, data){ self.postMessage(node.href); })',
+  onMessage: handleContextMenu
+});
