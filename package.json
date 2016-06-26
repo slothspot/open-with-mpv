@@ -7,7 +7,7 @@
   "author": "Dmitry Melnichenko",
   "engines": {
     "firefox": ">=38.0a1",
-    "fennec": ">=38.0a1"
+    "seamonkey": ">=2.30"
   },
   "license": "MIT",
   "keywords": [
